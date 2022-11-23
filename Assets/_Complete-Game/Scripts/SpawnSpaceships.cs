@@ -5,7 +5,6 @@ using Random = UnityEngine.Random;
 using UnityEngine.Jobs;
 using Unity.Mathematics;
 
-[BurstCompile]
 public class SpawnSpaceships : MonoBehaviour
 {
     public GameObject enemyshipPrefab;
@@ -39,6 +38,7 @@ public class SpawnSpaceships : MonoBehaviour
         transformAccessArray = new TransformAccessArray(SpaceshipsArray);
     }
     
+    [BurstCompile]    
     public struct JobsMover : IJobParallelForTransform
     {
         // public float3 shipTransformPos;
